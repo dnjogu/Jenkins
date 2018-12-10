@@ -1,14 +1,12 @@
 pipeline {
-	agent any     
- 	stages {               
-		stage(' Login') {  
-	  		steps { 
-	  			echo "Active user is now ${ params.USERID}"} 
-	  			}   
+
+	agent any 
+	    
+ 	stages {                 
 
 		stage('Checkout') {
 		      steps {
-		        git(url: 'http://localhost:7990/scm/merc/merc.git', branch: 'developer', poll: true)
+		        git(url: 'http://localhost:7990/scm/merc/merc.git', branch: 'master', poll: true)
 		      } 
 		  }
 
