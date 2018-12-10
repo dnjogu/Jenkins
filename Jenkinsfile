@@ -1,10 +1,34 @@
 pipeline {
   agent any
-  stages {
-    stage('Checkout') {
-      steps {
-        git(url: 'http://localhost:7990/scm/merc/merc.git', branch: 'developer', poll: true)
-      }
-    }
+  parameters {               
+  	string( name: 'USERID', defaultValue: '', description: 'Enter your userid') }       
+
+ 	 stages {               
+
+		stage(' Login') {  
+	  		steps { 
+	  			echo "Active user is now ${ params.USERID}"} 
+	  			}   
+
+		stage('Checkout') {
+		      steps {
+		        git(url: 'http://localhost:7990/scm/merc/merc.git', branch: 'developer', poll: true)
+		      } 
+
+		stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+    	stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
   }
+}
 }
