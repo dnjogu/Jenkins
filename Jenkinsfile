@@ -13,12 +13,13 @@ pipeline {
 		  }
 
 		stage('Build') {
-            steps {
+            steps { [
                 echo 'Building..'
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
                 sh 'mvn -B -DskipTests clean package'
             ]
         }
+    }
     	stage('Test') {
             steps {
                 echo 'Testing..'
@@ -34,7 +35,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
-  }
+  		}
 }
-}
+
 }
