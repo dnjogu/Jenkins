@@ -1,7 +1,5 @@
 pipeline {
-  agent any
-  parameters {               
-  	string( name: 'USERID', defaultValue: '', description: 'Enter your userid') }       
+  agent any     
 
  	 stages {               
 
