@@ -1,8 +1,6 @@
 pipeline {
-  agent any     
-
- 	 stages {               
-
+	agent any     
+ 	stages {               
 		stage(' Login') {  
 	  		steps { 
 	  			echo "Active user is now ${ params.USERID}"} 
