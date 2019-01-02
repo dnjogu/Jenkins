@@ -4,7 +4,7 @@ pipeline {
 
 		stage('Checkout') {
 		      steps {
-		        git(url: 'http://localhost:7990/scm/merc/merc.git', branch: 'master', poll: true)
+		        git(url: 'https://github.com/dnjogu/Jenkins.git', branch: 'developer', poll: true)
 		      } 
 		  }
 
@@ -35,4 +35,4 @@ pipeline {
 }
 
 }
-
+ 
