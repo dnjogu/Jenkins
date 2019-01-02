@@ -1,25 +1,18 @@
 pipeline {
-<<<<<<< HEAD
-	agent any     
- 	stages {                 
-
+	agent any 
+	stages {                 
 		stage('Checkout') {
-=======
+
 	agent none
  	stages {                 
 		stage('Checkout') {
 			agent { label "master" }
->>>>>>> reinitialised commit
 		      steps {
 		        git(url: 'https://github.com/dnjogu/Jenkins.git', branch: 'developer', poll: true)
 		      } 
 		  }
-
 		stage('Build') {
-<<<<<<< HEAD
-=======
 			agent { label "master" }
->>>>>>> reinitialised commit
             steps { [
                 echo 'Building..'
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
@@ -28,10 +21,8 @@ pipeline {
         }
     }
     	stage('Test') {
-<<<<<<< HEAD
-=======
+
     		agent { label "master" }
->>>>>>> reinitialised commit
             steps {
                 echo 'Testing..'
                 sh 'mvn test'
@@ -47,11 +38,8 @@ pipeline {
                 echo 'Deploying....'
             }
   		}
-<<<<<<< HEAD
 }
-=======
 	}
->>>>>>> reinitialised commit
 
 }
  
