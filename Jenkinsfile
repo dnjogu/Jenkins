@@ -1,10 +1,10 @@
 pipeline {
 	agent any 
-	stages {                 
+	stages{                 
 		stage('Checkout') {
 
 	agent none
-	stages {                 
+	stages{                 
 		stage('Checkout') {
 			agent { label "master" }
 		      steps {
