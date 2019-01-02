@@ -1,8 +1,4 @@
 pipeline {
-	agent any 
-	stages{                 
-		stage('Checkout') {
-
 	agent none
 	stages{                 
 		stage('Checkout') {
@@ -41,5 +37,4 @@ pipeline {
 }
 	}
 
-}
  
