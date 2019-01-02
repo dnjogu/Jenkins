@@ -1,9 +1,6 @@
 pipeline {
-	
 	agent none
-	     
  	stages {                 
-
 		stage('Checkout') {
 			agent { label "master" }
 		      steps {
@@ -37,7 +34,7 @@ pipeline {
                 echo 'Deploying....'
             }
   		}
-}
+	}
 
 }
  
