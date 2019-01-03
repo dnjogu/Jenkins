@@ -2,9 +2,6 @@
 pipeline {
     agent { node { label 'master' } }
 
-    environment {
-    }
-
     stages {
         stage("Checkout") {
             steps {
